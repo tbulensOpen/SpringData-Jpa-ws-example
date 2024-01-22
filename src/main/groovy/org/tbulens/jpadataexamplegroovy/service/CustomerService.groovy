@@ -12,9 +12,6 @@ class CustomerService {
     @Autowired CustomerRepository customerRepository
 
     Customer save(Customer customer) {
-        for(CustomerOrder co in customer.customerOrders) {
-            co.customer = customer
-        }
         customerRepository.save(customer)
         customer
     }
